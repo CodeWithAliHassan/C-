@@ -1,0 +1,27 @@
+using System;
+
+public class MyApp{
+    static void Main(string[]  args)
+    {
+        Console.WriteLine("Enter name:");
+        string name = Console.ReadLine();
+        Console.WriteLine("Enter City:");
+        string city = Console.ReadLine();
+        Console.WriteLine("Enter age:");
+        int age = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("My name is "+name+ ", I am "+age+" years old and from "+city);//concatenation
+        
+        Console.WriteLine("My name is {0}, I am {1} years old and from {2}",name,age,city);//formatting
+        
+        Console.WriteLine($"My name is {name}, I am {age} years old and from {city}\n");//interpolation
+        
+        
+        Console.WriteLine("Welcome to QA Automation");
+        Console.WriteLine("\tLearning C#");
+        Console.WriteLine("\t\tLearning C#");
+        
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+        
+    }
+}
