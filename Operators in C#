@@ -1,0 +1,82 @@
+using System;
+
+public class Operators{
+    static void Main(string[] args){
+     
+     
+     //Takes two integer variables and prints: Addition,Subtraction,Multiplication,Division,Modulus
+        Console.Write("Enter number 1:");
+        int num1=Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter number 2:");
+        int num2=Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("Sum:"+ (num1+num2));
+        Console.WriteLine("Subtraction:"+ (num1-num2));
+        Console.WriteLine("Division:"+ (num1/num2));
+        Console.WriteLine("Multiplication:"+ (num1*num2));
+        Console.WriteLine("Modulus:"+ (num1%num2));
+        
+        //Compare the two numbers using ==, !=,>, <
+        
+        if(num1>num2)
+        {
+            Console.WriteLine("Number 1 is greater than Number 2");
+        }
+        else if(num1<num2)
+        {
+            Console.WriteLine("Number 1 is smaller than Number 2");
+        }
+        else if(num1==num2)
+        {
+            Console.WriteLine("Number 1 is equal to Number 2");
+        }
+        else if(num1!=num2)
+        {
+            Console.WriteLine("Number 1 is not equal Number 2");
+        }
+        
+        
+       // Use && and || with two boolean variables.
+       bool isRemainderZero=true;
+       if(num1>num2&&num1%num2==0)
+       {
+            Console.WriteLine("Divisible="+ isRemainderZero);
+       }
+       else{
+           Console.Write("Divisible:");
+           Console.WriteLine(!(isRemainderZero));
+       }
+       
+       bool isRemainderOne=true;
+       if(num1>num2&&num1%num2==1)
+       {
+            Console.WriteLine("Divisible="+ isRemainderOne);
+       }
+       else{
+           Console.Write("Divisible:");
+           Console.WriteLine(!(isRemainderOne));
+       }
+       
+       
+      // Use a ternary operator to determine whether a student is "Pass" or "Fail".
+      Console.Write("Enter nmarks:");
+      int marks=Convert.ToInt32(Console.ReadLine());
+      string result= marks>=50? "Pass": "Fail";
+      Console.WriteLine(result);
+      
+      //Create a nullable string and use the ?? operator to print "No Name" if it is null
+      string name=null;
+      Console.WriteLine(name??"no name.");
+      
+      //Create an object and use both the is and as operators.
+      
+      object value="Ali";
+      Console.WriteLine(value is string);
+      Console.WriteLine(value is int);
+      
+      object value2="Hassan";
+      string lName=value2 as string;
+      Console.WriteLine(lName);
+        
+    }
+}
