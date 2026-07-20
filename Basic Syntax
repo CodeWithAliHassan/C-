@@ -1,0 +1,11 @@
+using System;
+ 
+public class Basic
+{
+    static void Main(string[] args)
+    { 
+        Console.WriteLine("Welcome to QA Automation");
+        Console.WriteLine("This is Ali Hassan");
+        Console.Write("I will become a Selenium Automation Engineer");
+    }
+}
