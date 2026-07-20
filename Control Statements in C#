@@ -1,0 +1,107 @@
+using System;
+
+public class MyApp{
+    static void Main(string[]  args)
+    {
+        //Checks whether a number is positive, negative, or zero using if-else if.
+        Console.WriteLine("Enter a number:");
+        int num = Convert.ToInt32(Console.ReadLine());
+        if(num>0)
+        {
+            Console.WriteLine("This is a positive number:");
+        }
+        else if(num<0)
+        {
+            Console.WriteLine("This is a negative number:");
+        }
+        else if(num==0)
+        {
+            Console.WriteLine("You entered 0:");
+        }
+        else{
+             Console.WriteLine("this is not a number. Enter valid number.:");
+        }
+        
+        //Prints the day name using a switch statement.
+        
+         Console.WriteLine("Enter a day number:");
+        int day = Convert.ToInt32(Console.ReadLine());
+        switch(day)
+        {
+            case 1:Console.WriteLine("Monday");
+            break;
+            case 2:Console.WriteLine("Tuesday");
+            break;
+            case 3:Console.WriteLine("Wednesday");
+            break;
+            case 4:Console.WriteLine("Thursday");
+            break;
+            case 5:Console.WriteLine("Friday");
+            break;
+            case 6:Console.WriteLine("Saturday");
+            break;
+            case 7:Console.WriteLine("Sunday");
+            break;
+            default:
+            Console.WriteLine("Invalid");  
+        break;
+        }
+        
+        //Prints numbers from 1 to 10 using a for loop.
+        Console.WriteLine("\nNumbers 1 to 10:");
+        for(int i=1;i<=10;i++){
+            
+            Console.WriteLine(i);
+        }
+        
+        //Prints even numbers from 2 to 20 using a while loop.
+        int j=2;
+        while(j<=20)
+        {
+            if(j%2==0)
+            {
+                
+              Console.WriteLine(j);  
+            }
+            j++;
+        }
+        
+        //Uses a foreach loop to print all names in an array.
+        
+        string [] names={"Ali","Hassan","Uzair"};
+        foreach(string name in names)
+        {
+            Console.WriteLine(name);
+        }
+        
+        //Uses break to stop a loop when the number reaches 5.
+        
+        for(int i=1;i<=10;i++){
+            if(i==5)
+            {
+                break;
+            }
+            Console.WriteLine(i);
+        }
+        
+        //Uses continue to skip printing the number 7.
+        for(int i=1;i<=10;i++){
+            if(i==7)
+            {
+                continue;
+            }
+            Console.WriteLine(i);
+        }
+        
+        //Creates a method that uses return to return the square of a number.
+        
+        static int Square(int number)
+           {
+                 return number * number;   // Direct return
+        }
+         int numSQ=8;
+         int SQRT=Square(numSQ);
+          Console.WriteLine("Square root is:"+SQRT);
+        
+    }
+}
