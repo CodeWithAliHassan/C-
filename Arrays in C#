@@ -1,0 +1,62 @@
+using System;
+
+public class MyApp{
+    static void Main(string[]  args)
+    {
+        //Creates an integer array with 10 numbers.
+        int [] numbers={11,2,14,4,92,6,7,8,9,10};
+        //Prints all numbers using both for and foreach.
+         Console.WriteLine("With For Each");
+        foreach(int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
+        Console.WriteLine("With For");
+        for(int i=0;i<10;i++)
+        {
+            Console.WriteLine(numbers[i]);
+        }
+        
+        //Finds and prints the largest number in the array.
+        
+        static int FindLargest(int[] arr)
+    {
+        int max = arr[0];   // Assume first number is the largest
+
+        for (int i = 1; i < arr.Length; i++)
+        {
+            if (arr[i] > max)
+            {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+    int largest = FindLargest(numbers);
+    Console.WriteLine($"\nThe largest number is: {largest}");
+    
+    //Sorts the array in ascending order.
+     Console.WriteLine($"\nAscending sort:");
+    Array.Sort(numbers);
+    for(int i=0;i<10;i++)
+        {
+            Console.WriteLine(numbers[i]);
+        }
+        
+    Console.WriteLine($"\nReversed array:");
+    //Reverses the array.
+    Array.Reverse(numbers);
+    for(int i=0;i<10;i++)
+        {
+            Console.WriteLine(numbers[i]);
+        }
+    
+    
+    
+    //Searches for a number using Array.IndexOf().
+    
+    int num=Array.IndexOf(numbers,10);
+    Console.WriteLine("\nindex number:"+num);
+    }    
+}
