@@ -1,0 +1,44 @@
+using System;
+
+public class MyInfo{
+    
+    static void Main(string[] args)
+    {
+        //datatypes and string interpolation
+        int age =23;
+        string firstName="Ali ";
+        string lastName="Hasssan";
+        double cgpa=3.63;
+        bool isInternee=true;
+        Console.WriteLine($"Name: {firstName}{lastName}");
+        Console.WriteLine($"CGPA: {cgpa}");
+        Console.WriteLine($"Age: {age}");
+        Console.WriteLine($"Internee: {isInternee}");
+        
+        //nullable int
+        int? rollNo=null;
+        Console.WriteLine(rollNo);
+        
+        //implicit and explicit type casting
+        int sr_no= 9;
+        float serialNo=sr_no;//implicit
+        
+        double sr_noE= 12.9;
+        int serialNoE=(int)sr_noE;//explicit
+        
+        Console.WriteLine($"Implicit: {serialNo}");
+        Console.WriteLine($"Explicit: {serialNoE}");
+        
+        //reates one var variable and one dynamic variable.
+        var num1=12;
+        Console.WriteLine($"Var type: {num1}");
+        dynamic num2=12;
+        Console.WriteLine($"Dynamic type: {num2}");
+        num2="ALI";
+        Console.WriteLine($"Dynamic type(string): {num2}");
+        
+        
+        
+        
+    }
+}
