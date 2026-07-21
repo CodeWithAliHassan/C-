@@ -1,0 +1,34 @@
+using System;
+
+public class Person{
+   private int age;
+   protected string name;
+   public int Age{get{return age;}set{age=value;}}
+   public void Display()
+       {
+           Console.WriteLine($"My name is {name} and I'm {age} years old.");
+           
+       }
+}
+
+public class Student:Person
+{
+    static void Main(string[] args)
+    {
+       
+       Student newStudent= new Student();
+       newStudent.name="Ali Hassan";
+       newStudent.Age=24;
+       newStudent.Display();
+       Utility.PrintMessage();
+    }
+}
+
+internal class Utility
+{
+    public static void PrintMessage()
+    {
+        Console.WriteLine("\nThis message is printed from the internal Utility class.");
+        Console.WriteLine("Internal classes are accessible only within the same assembly.");
+    }
+}
