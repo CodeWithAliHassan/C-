@@ -1,0 +1,98 @@
+using System;
+
+public class Person{
+ 
+   public void Display()
+       {
+           Console.WriteLine($"Display.");
+           
+       }
+}
+
+public class Student:Person
+{
+   public void Work()
+   {
+       Console.WriteLine($"Work.");
+   }
+}
+sealed class Company{
+    
+}
+
+public class Calculator{
+    public void Add(int n1,int n2, int n3)
+   {
+       Console.WriteLine("Sum:"+(n1+n2+n3));
+   }
+     public void Add(int n1,int n2)
+   {
+       Console.WriteLine("Sum:"+(n1+n2));
+   }
+     public void Add(int n1,int n2, int n3,int n4)
+   {
+       Console.WriteLine("Sum:"+(n1+n2+n3+n4));
+   }
+}
+
+public abstract class Shape
+{
+   public virtual void Draw(){}
+} 
+
+public class Circle:Shape
+{
+    public override void Draw()
+   {
+       Console.WriteLine($"Circle drawn.");
+   }
+  
+}
+
+public class Rectangle:Shape
+{
+   public override void Draw()
+   {
+       Console.WriteLine($"Rectangle drawn.");
+   }
+}
+
+interface ILogin{
+    public void Login();
+}
+
+public class LoginPage:ILogin
+{
+    public void Login()
+   {
+       Console.WriteLine($"Login page implemented.");
+   }
+  
+}
+public class Program
+{
+    public static void Main(string [] args)
+    {
+        //Inheritance
+        Student student1= new Student();
+        student1.Display();
+        student1.Work();
+       
+       //POlymorphism OverLoading
+       Calculator cal1=new Calculator();
+       cal1.Add(1,2,3);
+       cal1.Add(1,2);
+       cal1.Add(1,2,3,4);
+       //POlymorphism OverRiding
+       Rectangle rec1=new Rectangle();
+       Circle cir1=new Circle();
+       rec1.Draw();
+       cir1.Draw();
+       
+       //Interface Implementation
+        LoginPage login1=new LoginPage();
+        login1.Login();
+       
+       
+       }
+}
