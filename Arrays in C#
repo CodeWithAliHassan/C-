@@ -6,15 +6,16 @@ public class MyApp{
         //Creates an integer array with 10 numbers.
         int [] numbers={11,2,14,4,92,6,7,8,9,10};
         //Prints all numbers using both for and foreach.
+         Console.WriteLine("Array Length:"+numbers.Length);
          Console.WriteLine("With For Each");
         foreach(int number in numbers)
         {
-            Console.WriteLine(number);
+            Console.Write(number + "\t");
         }
-        Console.WriteLine("With For");
+        Console.WriteLine("With For:");
         for(int i=0;i<10;i++)
         {
-            Console.WriteLine(numbers[i]);
+            Console.Write(numbers[i] + "\t");
         }
         
         //Finds and prints the largest number in the array.
@@ -41,22 +42,65 @@ public class MyApp{
     Array.Sort(numbers);
     for(int i=0;i<10;i++)
         {
-            Console.WriteLine(numbers[i]);
+            Console.Write(numbers[i] + "\t");
         }
-        
+         
+   //Reverses the array.
     Console.WriteLine($"\nReversed array:");
-    //Reverses the array.
     Array.Reverse(numbers);
     for(int i=0;i<10;i++)
         {
-            Console.WriteLine(numbers[i]);
+            Console.Write(numbers[i] + "\t");
         }
     
-    
-    
     //Searches for a number using Array.IndexOf().
+    int index=Array.IndexOf(numbers,10);
+    Console.WriteLine("\nindex number:"+ index);
     
-    int num=Array.IndexOf(numbers,10);
-    Console.WriteLine("\nindex number:"+num);
+    
+    //Creates a 2×3 multidimensional array and prints all elements.
+    
+    int[,] matrix={{1,5,7},{2,4,6}};
+    Console.WriteLine($"\nMultidimensional array:");
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+          Console.Write(matrix[i,j]+"\t");
+        }
+        Console.WriteLine("\n");
+    }
+    
+    
+    //Creates a jagged array with different row sizes and prints all values.
+    
+    int[][] jagged={
+        new int[] {1,3},
+        new int[] {2,4,6,8},
+        new int[] {9,7,5}};
+    Console.WriteLine($"\nJagged array:");
+     for(int i=0;i<jagged.Length;i++)
+    {
+        for(int j=0;j<jagged[i].Length;j++)
+        {
+          Console.Write(jagged[i][j]+"\t");
+        }
+        Console.WriteLine("\n");
+    }
+    
+    
+    //Passes an array to a method and prints its elements.
+    
+    static void arrayMethod(int[] num)
+    {
+          for(int i=0;i<num.Length;i++)
+        {
+            Console.Write(num[i] + "\t");
+        }
+    }
+     Console.WriteLine($"\nMethod passed array:");
+    int [] array={1,7,9,11,13};
+    arrayMethod(array);
+
     }    
 }
