@@ -1,0 +1,31 @@
+using System;
+public class Employee{
+    public string name, department;
+    public double salary;
+    public Employee()
+    {
+        Console.WriteLine($"\nA new object is created"); 
+    }
+    public void DisplayInfo(){
+         Console.WriteLine($"\nName:{name}"); 
+         Console.WriteLine($"\nDepartment:{department}"); 
+         Console.WriteLine($"\nSalary:{salary}"); 
+    }
+}
+public class Program{
+    static void Main(string[]  args)
+    {
+    Employee emp_1= new Employee();
+    Employee emp_2= new Employee();
+    emp_1.name="Ali";
+    emp_1.department="QA";
+    emp_1.salary=50050.5;
+    
+    emp_2.name="Uzair";
+    emp_2.department="Dev";
+    emp_2.salary=60050.5;
+     
+     emp_1.DisplayInfo();
+     emp_2.DisplayInfo();
+    }    
+}
