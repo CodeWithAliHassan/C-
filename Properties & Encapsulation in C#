@@ -1,0 +1,62 @@
+using System;
+
+public class BankAccount
+{
+    // Private fields
+    private string accountHolder;
+    private double balance;
+    private string bankName = "Brillix Bank";
+
+    // Public Properties
+    public string AccountHolder
+    {
+        get { return accountHolder; }
+        set { accountHolder = value; }
+    }
+
+    public double Balance
+    {
+        get { return balance; }
+        set 
+        {
+            if (value >= 0)
+                balance = value;
+            else
+                Console.WriteLine("Error: Balance cannot be negative!");
+        }
+    }
+
+    // Read-only Property (Bonus)
+    public string BankName
+    {
+        get { return bankName; }
+    }
+
+    // Constructor
+    public BankAccount()
+    {
+        Console.WriteLine("\nA new Bank Account object is created");
+    }
+}
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+        BankAccount account1 = new BankAccount();
+        BankAccount account2 = new BankAccount();
+
+        // Assign values using properties
+        account1.AccountHolder = "Ali";
+        account1.Balance = 12345.67;
+
+        account2.AccountHolder = "Uzair";
+        account2.Balance = 67894.45;
+
+        // Display
+        Console.WriteLine($"\nBank name: {account1.BankName} \t Account Holder: {account1.AccountHolder} \t Balance: {account1.Balance}");
+        Console.WriteLine($"Bank name: {account2.BankName} \t Account Holder: {account2.AccountHolder} \t Balance: {account2.Balance}");
+
+        Console.ReadKey();
+    }
+}
