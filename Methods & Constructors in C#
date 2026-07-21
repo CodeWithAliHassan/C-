@@ -1,0 +1,55 @@
+using System;
+
+public class Employee{
+ 
+ 
+ public string city,house;
+   public Employee():this(26,"Uzair",3.63)//constructor chaining
+       {
+        Console.WriteLine("Default constructor");
+           
+       }
+   //parameterized constructor
+   public Employee(int empID,string name)
+   {
+        Console.WriteLine($"Employee ID:{empID}\nEmployee name:{name}");
+   }
+   //constructor overloading
+      public Employee(int empID,string name,double cgpa)
+   {
+        Console.WriteLine($"Employee ID:{empID}\nEmployee name:{name}\nEmployee CGPA:{cgpa}");
+   }
+   //static constructor
+   static Employee(){
+       Console.WriteLine($"These are Brillix employees");
+   }
+   
+   public static void CompanyInfo(){
+       Console.WriteLine($"Brillix is an digital academy.");
+   }
+   public void Department(string dep="QA")
+   {
+        Console.WriteLine($"Department:{dep}");
+   }
+   public void Adress(string city="Lahore",int house=12)
+   {
+        Console.WriteLine($"City:{city} \n House No:{house}");
+   }
+}
+
+
+public class Program
+{
+    public static void Main(string [] args)
+    {
+       
+       Employee e1=new Employee();
+       e1.Department();
+       e1.Adress(city="Lahore",house=1);
+       Employee e2=new Employee(12,"Ali");
+       Employee e3=new Employee(12,"Ali",3.63);
+       Employee.CompanyInfo();//static methods can only be accessed by classes and not objects
+       
+       
+    }
+}
