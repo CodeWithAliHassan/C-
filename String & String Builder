@@ -1,0 +1,50 @@
+using System;
+using System.Text;
+
+
+public class Program
+{
+    public static void Main(string [] args)
+    {
+        /*Create a console application that demonstrates all of the following:
+
+        Read a user's full name using Console.ReadLine().
+        Display:
+        Length
+        Uppercase
+        Lowercase
+        Trimmed value
+        Check whether the name contains "Ali".
+        Replace "Ali" with "Ahmed".
+        Display the first four characters using Substring().
+        Use string interpolation to display:
+        Hello Ali Hassan, Welcome to Brillix.
+        Display a Windows file path using a verbatim string.
+        Demonstrate \n, \t, and \".
+        Use a StringBuilder to build a three-line test report.
+        Explain (in comments) why StringBuilder is better than string for repeated modifications.*/
+       Console.Write("Enter your full name:");
+       string fullName= Console.ReadLine();
+       Console.WriteLine($"Name:{fullName}");
+       Console.WriteLine(fullName.Length);   
+       Console.WriteLine(fullName.ToUpper());  
+       Console.WriteLine(fullName.ToLower());  
+       Console.WriteLine(fullName.Trim()); 
+       Console.WriteLine(fullName.Contains("Ali"));
+       Console.WriteLine(fullName.Replace("Ali","Ahmad"));
+       Console.WriteLine(fullName.Substring(0,3));
+       Console.WriteLine($"Hello {fullName}, Welcome to Brillix");
+       string path=@"C:\Program Files\Common Files";
+       Console.WriteLine(path);
+       Console.Write($"\nI'm a new line using");//using \n to goto new line
+       Console.WriteLine($"\n\tI'm using tab");//using \t to goto new line
+       Console.WriteLine($"He said \"Hello\"");//using \" for inverted commas
+       
+       StringBuilder builder =new StringBuilder();
+       builder.AppendLine("Test case is designed");
+       builder.AppendLine("Test case is executed");
+       builder.AppendLine("Test case is passed");
+       Console.Write(builder);
+        
+    }
+} 
