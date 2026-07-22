@@ -1,0 +1,81 @@
+using System;
+using System.Text;
+
+public class InvalidSalaryException:Exception{
+public InvalidSalaryException() 
+        : base("Salary cannot be negative or zero.") { }
+
+    public InvalidSalaryException(string message) 
+        : base(message) { }
+}
+public class Program
+{
+    public static void Main(string [] args)
+    {
+     //DivideByZeroException
+      try{
+          int num1=10;
+          int num2=0;
+          double div=num1/num2;
+          
+      }
+      catch(DivideByZeroException){
+          Console.WriteLine("Can't divide by 0.");
+          
+      }
+      finally{
+          Console.WriteLine("Closing program.");
+      }
+      
+      //FormatException
+        try{
+          Console.WriteLine("Enter your age:");
+          int num=Convert.ToInt32(Console.ReadLine());
+      }
+      catch(FormatException){
+          Console.WriteLine("Wrong format.");
+          
+      }
+      finally{
+          Console.WriteLine("Closing program.");
+      } 
+      
+      
+      //multiple catch
+        try{
+          Console.WriteLine("Enter your age:");
+          int age=Convert.ToInt32(Console.ReadLine());
+          Console.WriteLine("Enter number 1:");
+          int num1=Convert.ToInt32(Console.ReadLine());
+      }
+      catch(FormatException){
+          Console.WriteLine("Wrong format.");
+          
+      }
+       catch(Exception ex){
+          Console.WriteLine(ex.Message);
+      }
+      finally{
+          Console.WriteLine("Closing program.");
+      } 
+      
+      //Throw an exception
+      try{
+          Console.WriteLine("Enter your age:");
+          int num=Convert.ToInt32(Console.ReadLine());
+           if (num <0)
+        {
+            throw new Exception("User age cant be negative");
+        }
+       }
+        catch(Exception ex){
+          Console.WriteLine(ex.Message);
+      }
+      finally{
+          Console.WriteLine("Closing program.");
+      } 
+      
+      
+        
+    }
+} 
