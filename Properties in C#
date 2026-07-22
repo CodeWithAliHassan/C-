@@ -1,0 +1,56 @@
+using System;
+
+public class Employee{
+   //Auto-implemented properties
+   public string Name{get;set;}
+   public string Department{get;set;}
+   //Full property:
+   double salary;
+   public double Salary{
+       get{
+           return salary;
+       }
+       set{
+           if(value>0)
+           {
+               salary=value;
+           }
+       }
+   }
+   //Read-only property
+   string company;
+   public string Company{
+       get{
+           company="Brillix";
+           return company;
+       }
+   }
+   //Write-only property
+   string password;
+   public string Password{
+       set{
+           value=password;
+       }
+   }
+   //Expression-bodied property
+   public string EmployeeInfo=>"ALI-QA";
+}
+
+
+public class Program
+{
+    public static void Main(string [] args)
+    {
+       
+       Employee e1=new Employee();
+       e1.Name="ALI Hassan";
+       e1.Department="QA";
+       e1.Salary=250000.56;
+       Console.WriteLine(e1.Company);//read only property
+       e1.Password="l1f21bsse0133";
+       Console.WriteLine(e1.EmployeeInfo);//expression bodied property
+       Console.WriteLine($"Employee Name:{e1.Name}\nEmployee department:{e1.Department}\nSalary:{e1.Salary}\n");
+      
+        
+    }
+} 
