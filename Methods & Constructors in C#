@@ -2,8 +2,6 @@ using System;
 
 public class Employee{
  
- 
- public string city,house;
    public Employee():this(26,"Uzair",3.63)//constructor chaining
        {
         Console.WriteLine("Default constructor");
@@ -31,10 +29,37 @@ public class Employee{
    {
         Console.WriteLine($"Department:{dep}");
    }
-   public void Adress(string city="Lahore",int house=12)
+   public void Adress(string city,int house)//named params
    {
         Console.WriteLine($"City:{city} \n House No:{house}");
    }
+   public static int Salary(params int [] salaries)  //using params keyword
+   {
+       int sum=0;
+       foreach(int n in salaries){
+           sum+=n;
+       }
+        return sum;
+   }
+   
+   public void increment(ref int num) //pass by ref keyword
+   {
+       num++;
+       Console.WriteLine($"Increment:{num}");
+   }
+   
+   public void outParam(out int num)//passed by out keyword
+   {
+       num=0133;
+        Console.WriteLine($"Passed by out keyword:{num}");
+   }
+   
+      public void inParam(in int num)//passed by in keyword
+   {
+        
+        Console.WriteLine($"Passed by in keyword:{num}");
+   }
+   
 }
 
 
@@ -45,11 +70,17 @@ public class Program
        
        Employee e1=new Employee();
        e1.Department();
-       e1.Adress(city="Lahore",house=1);
+       e1.Adress(city:"Lahore",house:1);//named parameters
        Employee e2=new Employee(12,"Ali");
        Employee e3=new Employee(12,"Ali",3.63);
        Employee.CompanyInfo();//static methods can only be accessed by classes and not objects
-       
-       
+        Console.WriteLine(Employee.Salary(123,145,156));
+        int num=50;
+        e1.increment(ref num);
+        int num2;
+        e1.outParam(out num2);
+        int num3=3;
+        e1.inParam(in num3 );
+        
     }
-}
+} 
